@@ -1,0 +1,6 @@
+IMPORTANT
+
+n.n.n marked recordings are supporting recordings. Please ignore them unless specifically mentioned by a corresponding "REC n.n - README.txt" file.
+
+n.n marked recordings are the main recordings.
+

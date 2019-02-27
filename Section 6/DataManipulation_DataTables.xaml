@@ -1,0 +1,269 @@
+﻿<Activity mc:Ignorable="sap sap2010 sads" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap2010:WorkflowViewState.IdRef="WF06_Variables_1"
+ xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+ xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities"
+ xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger"
+ xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation"
+ xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation"
+ xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"
+ xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib"
+ xmlns:sd="clr-namespace:System.Data;assembly=System.Data"
+ xmlns:ui="http://schemas.uipath.com/workflow/activities"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualStudio.Services.Common</AssemblyReference>
+      <AssemblyReference>UiPath.IntelligentOCR</AssemblyReference>
+      <AssemblyReference>UiPath.Python</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="DataTable Examples" sap2010:WorkflowViewState.IdRef="Sequence_42">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="sd:DataTable" Name="dt" />
+      <Variable x:TypeArguments="sd:DataTable" Name="dtProcessed" />
+      <Variable x:TypeArguments="x:String" Name="dtStr" />
+      <Variable x:TypeArguments="ui:GenericValue" Name="cellValue" />
+      <Variable x:TypeArguments="x:Int32" Name="rowIndex" />
+    </Sequence.Variables>
+    <ui:Comment sap2010:WorkflowViewState.IdRef="Comment_1" Text="Load Excel Data into a DataTable and display the data" />
+    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Load ExcelSheet into Datatable" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_3" WorkbookPath="inputs\Excel\EmployeeDB.xlsx">
+      <ui:ExcelApplicationScope.Body>
+        <ActivityAction x:TypeArguments="ui:WorkbookApplication">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap2010:WorkflowViewState.IdRef="Sequence_41">
+            <ui:ExcelReadRange AddHeaders="True" DataTable="[dt]" DisplayName="Read Range" sap2010:WorkflowViewState.IdRef="ExcelReadRange_3" SheetName="Sheet1">
+              <ui:ExcelReadRange.Range>
+                <InArgument x:TypeArguments="x:String">
+                  <Literal x:TypeArguments="x:String" Value="" />
+                </InArgument>
+              </ui:ExcelReadRange.Range>
+            </ui:ExcelReadRange>
+          </Sequence>
+        </ActivityAction>
+      </ui:ExcelApplicationScope.Body>
+    </ui:ExcelApplicationScope>
+    <ui:OutputDataTable DataTable="[dt]" DisplayName="Output Data Table" sap2010:WorkflowViewState.IdRef="OutputDataTable_2" Text="[dtStr]" />
+    <ui:MessageBox ChosenButton="{x:Null}" Buttons="Ok" Caption="Original Datatable Data" DisplayName="Message box" sap2010:WorkflowViewState.IdRef="MessageBox_30" Text="[dtStr]" TopMost="True" />
+    <ui:Comment sap2010:WorkflowViewState.IdRef="Comment_2" Text="Filter Data" />
+    <ui:FilterDataTable DataTable="[dt]" DisplayName="Filter data table" FilterRowsMode="Keep" sap2010:WorkflowViewState.IdRef="FilterDataTable_3" OutputDataTable="[dtProcessed]" SelectColumnsMode="Keep">
+      <ui:FilterDataTable.Filters>
+        <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
+          <ui:FilterOperationArgument BooleanOperator="And" Operator="GTE">
+            <ui:FilterOperationArgument.Column>
+              <InArgument x:TypeArguments="x:String">["Age"]</InArgument>
+            </ui:FilterOperationArgument.Column>
+            <ui:FilterOperationArgument.Operand>
+              <InArgument x:TypeArguments="x:Double">[60.0]</InArgument>
+            </ui:FilterOperationArgument.Operand>
+          </ui:FilterOperationArgument>
+          <ui:FilterOperationArgument BooleanOperator="And" Operator="GTE">
+            <ui:FilterOperationArgument.Column>
+              <InArgument x:TypeArguments="x:String">["Salary"]</InArgument>
+            </ui:FilterOperationArgument.Column>
+            <ui:FilterOperationArgument.Operand>
+              <InArgument x:TypeArguments="x:Double">[70000.0]</InArgument>
+            </ui:FilterOperationArgument.Operand>
+          </ui:FilterOperationArgument>
+        </scg:List>
+      </ui:FilterDataTable.Filters>
+      <ui:FilterDataTable.SelectColumns>
+        <scg:List x:TypeArguments="InArgument" Capacity="4">
+          <InArgument x:TypeArguments="x:String">["Name"]</InArgument>
+          <InArgument x:TypeArguments="x:String">["Age"]</InArgument>
+          <InArgument x:TypeArguments="x:String">["Salary"]</InArgument>
+        </scg:List>
+      </ui:FilterDataTable.SelectColumns>
+    </ui:FilterDataTable>
+    <ui:OutputDataTable DataTable="[dtProcessed]" DisplayName="Output Data Table" sap2010:WorkflowViewState.IdRef="OutputDataTable_5" Text="[dtStr]" />
+    <ui:MessageBox ChosenButton="{x:Null}" Buttons="Ok" Caption="Filtered Data" DisplayName="Message box" sap2010:WorkflowViewState.IdRef="MessageBox_32" Text="[dtStr]" TopMost="True" />
+    <ui:Comment sap2010:WorkflowViewState.IdRef="Comment_3" Text="Lookup" />
+    <ui:LookupDataTable LookupColumnIndex="{x:Null}" LookupDataColumn="{x:Null}" TargetColumnIndex="{x:Null}" TargetDataColumn="{x:Null}" DataTable="[dt]" DisplayName="Lookup data table" sap2010:WorkflowViewState.IdRef="LookupDataTable_3" LookupColumnName="Name" LookupValue="John Gates" RowIndex="[rowIndex]" TargetColumnName="Name">
+      <ui:LookupDataTable.CellValue>
+        <OutArgument x:TypeArguments="ui:GenericValue">[cellValue]</OutArgument>
+      </ui:LookupDataTable.CellValue>
+    </ui:LookupDataTable>
+    <ui:MessageBox ChosenButton="{x:Null}" Buttons="Ok" Caption="[&quot;Lookup Data for First &quot;&quot;John Gates&quot;&quot;&quot;]" DisplayName="Message box" sap2010:WorkflowViewState.IdRef="MessageBox_31" Text="[cellValue.ToString +&quot; &quot; +rowIndex.ToString]" TopMost="True" />
+    <ui:Comment sap2010:WorkflowViewState.IdRef="Comment_4" Text="Sort" />
+    <ui:SortDataTable ColumnIndex="{x:Null}" DataColumn="{x:Null}" ColumnName="Age" DataTable="[dt]" DisplayName="Sort data table" sap2010:WorkflowViewState.IdRef="SortDataTable_3" Order="Decending" OutputDataTable="[dtProcessed]" />
+    <ui:OutputDataTable DataTable="[dtProcessed]" DisplayName="Output Data Table" sap2010:WorkflowViewState.IdRef="OutputDataTable_3" Text="[dtStr]" />
+    <ui:MessageBox ChosenButton="{x:Null}" Buttons="Ok" Caption="Sorted Data" DisplayName="Message box" sap2010:WorkflowViewState.IdRef="MessageBox_29" Text="[dtStr]" TopMost="True" />
+    <ui:Comment sap2010:WorkflowViewState.IdRef="Comment_5" Text="Remove Duplicates" />
+    <ui:RemoveDuplicateRows DataTable="[dt]" DisplayName="Remove duplicate rows" sap2010:WorkflowViewState.IdRef="RemoveDuplicateRows_3" OutputDataTable="[dtProcessed]" />
+    <ui:OutputDataTable DataTable="[dtProcessed]" DisplayName="Output Data Table" sap2010:WorkflowViewState.IdRef="OutputDataTable_4" Text="[dtStr]" />
+    <ui:MessageBox ChosenButton="{x:Null}" Buttons="Ok" Caption="Duplicates Removed" DisplayName="Message box" sap2010:WorkflowViewState.IdRef="MessageBox_27" Text="[dtStr]" TopMost="True" />
+    <sads:DebugSymbol.Symbol>d0dDOlxVc2Vyc1xSYW1lc2hcRGVza3RvcFxQcm9qZWN0c1xQYWNrdFxEYXRhTWFuaXB1bGF0aW9uX0RhdGFUYWJsZXMueGFtbEBEA5EBDgIBAUwFTHwCAVZNBV4gAgFOXwVfjwECAUlgBWDFAQIBRWEFYVICAURiBX4aAgE4fwV/mAECATOAAQWAAbsBAgEvgQEFgQFNAgEuggEFhgEaAgEkhwEFhwGjAgIBIYgBBYgBSwIBIIkBBYkB6gECARqKAQWKAZgBAgEViwEFiwG5AQIBEYwBBYwBWAIBEI0BBY0BrAECAQuOAQWOAZgBAgEGjwEFjwHAAQIBAk2nAU3FAQIBVVMLWxYCAU9fgwFfjAECAUxfI18pAgFKYEFgWgIBSGCqAWCzAQIBRm82b0ACAUNyNnI/AgFCZzZnPQIBQWo2ajwCAUBipAFiswECAT5iI2IpAgE8eTJ5OgIBO3oyejkCATp7Mns8AgE5f4wBf5UBAgE2fyN/MgIBNIABQYABUAIBMoABoAGAAakBAgEwggGqAoIBtgICASyCAZQCggGgAgIBK4QBOIQBQwIBKYIBgQKCAYcCAgEoggHIAoIBzgICASeCAZUBggGbAQIBJYcBQYcBiQECASOHAdkBhwGRAgIBIokBT4kBVAIBH4kB2AGJAecBAgEdiQFfiQFlAgEbigGMAYoBlQECARiKASOKATICARaLAUGLAU4CARSLAZ4BiwGnAQIBEo0BmgGNAakBAgEOjQEnjQEtAgEMjgGMAY4BlQECAQmOASOOATICAQePAUGPAVUCAQWPAaUBjwGuAQIBA1QNWiECAVBUPFRCAgFTVxNXQgIBUlSZAVShAQIBUQ==</sads:DebugSymbol.Symbol>
+  </Sequence>
+  <sap2010:WorkflowViewState.ViewStateManager>
+    <sap2010:ViewStateManager>
+      <sap2010:ViewStateData Id="Comment_1" sap:VirtualizedContainerService.HintSize="414,74" />
+      <sap2010:ViewStateData Id="ExcelReadRange_3" sap:VirtualizedContainerService.HintSize="314,59" />
+      <sap2010:ViewStateData Id="Sequence_41" sap:VirtualizedContainerService.HintSize="336,183">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="ExcelApplicationScope_3" sap:VirtualizedContainerService.HintSize="414,292">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="OutputDataTable_2" sap:VirtualizedContainerService.HintSize="414,22">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="MessageBox_30" sap:VirtualizedContainerService.HintSize="414,59">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Comment_2" sap:VirtualizedContainerService.HintSize="414,55" />
+      <sap2010:ViewStateData Id="FilterDataTable_3" sap:VirtualizedContainerService.HintSize="414,59">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="OutputDataTable_5" sap:VirtualizedContainerService.HintSize="414,22">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="MessageBox_32" sap:VirtualizedContainerService.HintSize="414,59">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Comment_3" sap:VirtualizedContainerService.HintSize="414,55" />
+      <sap2010:ViewStateData Id="LookupDataTable_3" sap:VirtualizedContainerService.HintSize="414,22">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="MessageBox_31" sap:VirtualizedContainerService.HintSize="414,59">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Comment_4" sap:VirtualizedContainerService.HintSize="414,55" />
+      <sap2010:ViewStateData Id="SortDataTable_3" sap:VirtualizedContainerService.HintSize="414,22">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="OutputDataTable_3" sap:VirtualizedContainerService.HintSize="414,22">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="MessageBox_29" sap:VirtualizedContainerService.HintSize="414,59">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Comment_5" sap:VirtualizedContainerService.HintSize="414,55" />
+      <sap2010:ViewStateData Id="RemoveDuplicateRows_3" sap:VirtualizedContainerService.HintSize="414,22">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="OutputDataTable_4" sap:VirtualizedContainerService.HintSize="414,22">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="MessageBox_27" sap:VirtualizedContainerService.HintSize="414,59">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Sequence_42" sap:VirtualizedContainerService.HintSize="436,1938">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="WF06_Variables_1" sap:VirtualizedContainerService.HintSize="476,2018" />
+    </sap2010:ViewStateManager>
+  </sap2010:WorkflowViewState.ViewStateManager>
+</Activity>

@@ -1,0 +1,34 @@
+Building Digital Workforce
+This is the promise of Robotic Process Automation (RPA) that emerges in the last few
+years as a set of software tools and platforms that can automate tasks on rules-based
+business process. Recent case studies report the beneﬁts of the application of RPA in
+different business process and some authors propose the criteria for selecting the
+process for automation. One of these criteria is highly structured tasks, corresponding
+typically to back ofﬁce business process like ﬁnance, procurement and human
+resources. From the research. studies have found beneﬁts of the application of RPA
+on front ofﬁce business process like selling. requirements handling or after sales
+support. Considering the above, the question is "What are the results on applying RPA
+to service business process with front and back ofﬁce activities”?
+Robotic Process Automation (RPA) emerges as software-based
+solution to automate rules-based business processes that involve
+routine tasks, structured data and deterministic outcomes. Recent
+studies report the benefits of the application of RPA in terms of
+productivity, costs, speed and error reduction. Most of these
+applications were carried out on back ofﬁce business process where
+the customer is not directly involved, therefore a case study was
+conducted on a BPO provider to verify the beneﬁts and results of
+applying RPA to a service business process with front and back ofﬁce
+activities. The results show that productivity improvement is the main
+benefit of RPA.
+RPA Adoption Report
+Digital Workforce creation technology— challenges. Concerns about security.
+RPA, has swiftly become the main go- scalability. and automation
+to solution for senior executives of maintenance are top of the mind of
+nearly every business environment, most organizations’ executives. The
+and with good reason - many report provides the ﬁndings of a survey-
+enterprises have successfully deployed based research project that Everest
+and leveraged automation for Group undertook with 72 enterprise
+efﬁciency. general business executives across multiple
+improvement and other related geographies, to understand What
+objectives. However, all these enterprises value as the most important
+endeavours come with speciﬁc features of an RPA solution.

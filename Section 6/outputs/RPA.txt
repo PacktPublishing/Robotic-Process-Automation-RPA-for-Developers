@@ -1,0 +1,32 @@
+Building Digital Workforce
+This is the promise of Robotic Process Automation (RPA) that emerges in the last few
+years as a set of software tools and platforms that can automate tasks on rules-based
+business process. Recent case studies report the benefits of the application of RPA in 
+different business process and some authors propose the criteria for selecting the 
+process for automation. One of these criteria is highly structured tasks, corresponding 
+typically to back office business process like finance, procurement and human 
+resources. From the research, studies have found benefits of the application of RPA 
+on front office business process like selling, requirements handling or after sales 
+support. Considering the above, the question is “What are the results on applying RPA 
+to service business process with front and back office activities”?
+RPA Adoption Report
+Digital Workforce creation technology –
+RPA, has swiftly become the main go￾to solution for senior executives of 
+nearly every business environment, 
+and with good reason - many 
+enterprises have successfully deployed 
+and leveraged automation for 
+efficiency, general business 
+improvement and other related 
+objectives. However, all these 
+endeavours come with specific 
+challenges. Concerns about security, 
+scalability, and automation 
+maintenance are top of the mind of 
+most organizations’ executives. The 
+report provides the findings of a survey￾based research project that Everest 
+Group undertook with 72 enterprise 
+executives across multiple 
+geographies, to understand what 
+enterprises value as the most important 
+features of an RPA solution.

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>User Registration</title>
+	<style>
+		table { border-collapse:collapse; table-layout:auto; }
+		table td { border:dotted 1px #ffccdd; word-wrap:break-word; }	
+		table, th, td { border: 2px dotted black; border-collapse: collapse; }
+		#members { border: 1px dotted gray; border-collapse: collapse; }
+		th, tr { padding: 1px; text-align: left; }
+		a:link { color: black; text-decoration: none;}
+		a:visited { color: black; text-decoration: none;}
+		a:hover { color: black; text-decoration: none;}
+		a:active { color: black; text-decoration: none;}
+	</style>
+	<script type="text/javascript">
+		function submitForm() {
+			var login = document.getElementById('login').value;
+			var password = document.getElementById('password').value;
+			var email = document.getElementById('email').value;
+			//alert(login +" " +password +" " +email);
+			if (login=="" || password=="" || email=="") {
+				alert("Please fill all mandatory fields");
+			} else {
+				document.getElementById('regform').submit();
+				alert("Successfully Submitted");
+			}
+		}
+		
+		function resetForm(msg) {
+			document.getElementById('resetbuttonid').click();
+			alert(msg);
+		}
+	</script>
+</head>
+
+<body>
+	<div align="center" vertical-align="middle">
+	<H1>
+	<IMG SRC="registration.png" width="200px" height="50px"
+		 onclick="resetForm('Please fill the form')" title="Registration / User Profile Form">
+	<IMG SRC="user-profile.png" width="50px" height="50px" 
+	     onclick="resetForm('Please fill the form')" title="User Profile">
+	<FONT TYPE="Arial" Color="blue">User</FONT> <FONT TYPE="Arial" Color="red">Profile</font>
+	</H1>
+	<form id="regform" onsubmit="submitForm()" method="post">
+		<table>
+		<tr><td>Choose a login name*</td><td>:</td><td><input id="login" type="text" size="25"></td>
+		<td>Choose a Password*</td><td>:</td><td><input id="password" type="password" size="25"></td></tr>
+		<tr><td>Email Address*</td><td>:</td><td colspan=4><input id="email" type="text" name="fname"></td></tr>
+		<tr><td>First name</td><td>:</td><td> <input type="text" name="fname"></td>
+		<td>Last name</td><td>:</td><td> <input type="text" name="lname"></td></tr>
+		<tr><td>Gender</td><td>:</td><td> <input type="radio" name="male">Male <input type="radio" name="female">Female <input type="radio" name="others">Others &nbsp; &nbsp; &nbsp; </td>
+		<td>Resident?</td><td>:</td><td> <input type="checkbox" name="lname">Yes</td></tr>
+		<tr><td>Food</td><td>:</td><td>
+		<select>
+			<option value="Vegetarian">Vegetrarian</option>
+			<option value="Non-Vegetarian">Non-Vegetarian</option>
+			<option value="Kosher">Kosher</option>
+			<option value="Jain">Jain Food</option>
+			<option value="ChildMeal">Child Meal</option>
+			<option value="MedicalMeal">Medical Meal</option>
+		</select>
+		</td>
+		<td align="right">Car Brands Owned<br>(multiple select)</td><td>:</td>
+		<td>
+		<select name="cars" multiple>
+			<option value="volvo">Volvo</option>
+			<option value="saab">Saab</option>
+			<option value="opel">Opel</option>
+			<option value="audi">Audi</option>
+			<option value="merc">Merc</option>
+			<option value="BMW">BMW</option>
+			<option value="Suzuki">Suzuki</option>
+			<option value="Others">Others</option>
+		</select>
+		</td>
+		</tr>		
+		
+		<tr><td>Message</td><td>:</td><td><textarea name="message" style="width:150px; height:50px" selected>message text</textarea></td>
+		<td>Your Team Members</td><td>:</td><td>
+			<table id="members">
+			  <tr><th id="members">First Name</th><th id="members">Last Name</th><th id="members">Age</th></tr>
+			  <tr><td>Jill</td><td>Smith</td><td>40</td></tr>
+			  <tr><td>Eve</td><td>Jackson</td><td>24</td></tr>
+			  <tr><td>Mike</td><td>Grano</td><td>28</td></tr>
+			</table>
+		</td></tr>
+		<tr><td colspan=6 align="Center"  valign="center">
+		<input type="button" value="Submit" onClick="javascript:submitForm();">
+		</td></tr>
+		</table>
+		</div>
+		
+		<br>
+		<div align="center" valign="center">
+		<IMG SRC="quote.png" onclick="resetForm('Quote')" title="Click to reset the form." width="100px" height="100px">
+		<input type="reset" id="resetbuttonid" style="display:none;">
+		</div>
+		
+		<div id="linkbar" align="center">
+		<A HREF="https://www.wikipedia.org/" target="new">Wikipedia</A>&nbsp;
+		<A HREF="https://www.pathways.in/" target="new">Pathways</A>&nbsp;
+		<A HREF="https://www.cnn.com/" target="new">CNN</A>&nbsp;
+		<A HREF="https://www.uipath.com/" target="new">UiPath</A>&nbsp;
+		<A HREF="https://www.automationanywhere.com/" target="new">Automation Anywhere</A>&nbsp;
+		<A HREF="https://www.blueprism.com/" target="new">BluePrism</A>&nbsp;
+		</div>
+	</form> 
+</body>
+</HTML>

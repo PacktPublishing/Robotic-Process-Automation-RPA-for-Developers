@@ -27,26 +27,25 @@ The course is for developers who want to get started with their career in RPA. T
 Prerequisites for this course are a knowledge of elementary programming concepts and the basics of OOPs.
 ### Technical Requirements
 This course has the following software requirements:<br/>
-This course has the following software requirements:
 
 Minimum Hardware Requirements for successful completion of this course, students will require the computer systems with at least the following:
-• OS: Windows 7 and above
-• Processor: 1.4GHz 32-bit(x86)
-• Memory: 4GB
-• Storage: 1GB
+• OS: Windows 7 and above </br>
+• Processor: 1.4GHz 32-bit(x86) </br>
+• Memory: 4GB </br>
+• Storage: 1GB </br>
 
 Recommended Hardware Requirements
 For an optimal experience with hands-on labs and other practical activities, we recommend the following configuration:
-• OS: Windows 10, .NET Framework 4.7
-• Processor: Dual Core 1.8GHz 64Bit or better    configuration
-• Memory: 4GB or better
-• Storage: 1GB or better
+• OS: Windows 10, .NET Framework 4.7 </br>
+• Processor: Dual Core 1.8GHz 64Bit or better    configuration </br>
+• Memory: 4GB or better </br>
+• Storage: 1GB or better </br>
 
 Software Requirements:
-• Operating system: Windows 10 (Windows 7    and above also ok)
-• Browser: Latest versions of IE, Chrome,    Firefox
-• UiPath Community Edition 2018.3.1 (Latest   as of 19-Oct-2018) - Free Download is   available
-• Microsoft Excel, PDF Acrobat Reader,   Microsoft Outlook (optional), Any VM   Software like Citrix or VMWare or VirtualBox   or any other (optional)
+• Operating system: Windows 10 (Windows 7 and above also ok)
+• Browser: Latest versions of IE, Chrome, Firefox </br>
+• UiPath Community Edition 2018.3.1 (Latest   as of 19-Oct-2018) - Free Download is available </br>
+• Microsoft Excel, PDF Acrobat Reader,   Microsoft Outlook (optional), Any VM   Software like Citrix or VMWare or VirtualBox or any other (optional) </br>
 
 
 ## Related Products

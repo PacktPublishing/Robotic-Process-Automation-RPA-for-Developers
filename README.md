@@ -28,21 +28,21 @@ Prerequisites for this course are a knowledge of elementary programming concepts
 ### Technical Requirements
 This course has the following software requirements:<br/>
 
-Minimum Hardware Requirements for successful completion of this course, students will require the computer systems with at least the following:
+Minimum Hardware Requirements for successful completion of this course, students will require the computer systems with at least the following: </br>
 • OS: Windows 7 and above </br>
 • Processor: 1.4GHz 32-bit(x86) </br>
 • Memory: 4GB </br>
 • Storage: 1GB </br>
 
-Recommended Hardware Requirements
-For an optimal experience with hands-on labs and other practical activities, we recommend the following configuration:
+Recommended Hardware Requirements </br>
+For an optimal experience with hands-on labs and other practical activities, we recommend the following configuration: </br>
 • OS: Windows 10, .NET Framework 4.7 </br>
 • Processor: Dual Core 1.8GHz 64Bit or better    configuration </br>
 • Memory: 4GB or better </br>
 • Storage: 1GB or better </br>
 
-Software Requirements:
-• Operating system: Windows 10 (Windows 7 and above also ok)
+Software Requirements: </br>
+• Operating system: Windows 10 (Windows 7 and above also ok) </br>
 • Browser: Latest versions of IE, Chrome, Firefox </br>
 • UiPath Community Edition 2018.3.1 (Latest   as of 19-Oct-2018) - Free Download is available </br>
 • Microsoft Excel, PDF Acrobat Reader,   Microsoft Outlook (optional), Any VM   Software like Citrix or VMWare or VirtualBox or any other (optional) </br>
